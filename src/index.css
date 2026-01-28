@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-cream);
+  color: var(--color-dark-green);
+  line-height: 1.7;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Diodona Green Palette */
+  --color-cream: #DDD9D2;
+  --color-sage: #A3AD8E;
+  --color-medium-green: #6D8363;
+  --color-forest-green: #445442;
+  --color-dark-green: #384640;
+
+  /* Semantic Aliases */
+  --color-primary: var(--color-forest-green);
+  --color-secondary: var(--color-sage);
+  --color-accent: var(--color-medium-green);
+
+  --color-text-primary: var(--color-dark-green);
+  --color-text-secondary: #5A5A5A;
+  --color-text-light: #FFFFFF;
+
+  --color-bg-light: var(--color-cream);
+  --color-bg-dark: var(--color-dark-green);
+  --color-white: #FFFFFF;
+  --color-surface: var(--color-white);
+  --color-border: rgba(56, 70, 64, 0.15);
+
+  /* Typography */
+  --font-family: 'Cormorant Garamond', serif;
+  --font-sans: 'Poppins', sans-serif;
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-display: 'Playfair Display', serif;
+  --font-cursive: 'Italianno', cursive;
+
+  /* Spacing */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 32px;
+  --spacing-lg: 64px;
+  --spacing-xl: 120px;
+
+  /* Radius - Minimal */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(56, 70, 64, 0.08);
+  --shadow-md: 0 4px 16px rgba(56, 70, 64, 0.12);
+  --shadow-lg: 0 8px 32px rgba(56, 70, 64, 0.16);
+
+  /* Transitions */
+  --transition-fast: all 0.2s ease;
+  --transition-normal: all 0.4s ease;
+  --transition-slow: all 0.6s ease;
+}
+
+#root {
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Scrollbar for the inner content */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}

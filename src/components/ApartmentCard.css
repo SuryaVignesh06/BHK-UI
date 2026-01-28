@@ -1,0 +1,90 @@
+.apartment-card {
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.card-image-wrapper {
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+}
+
+.card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.apartment-card:hover .card-image-wrapper img {
+    transform: scale(1.08);
+}
+
+.card-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(56, 70, 64, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.apartment-card:hover .card-overlay {
+    opacity: 1;
+}
+
+.view-details {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-white);
+    border: 1px solid var(--color-white);
+    padding: 12px 25px;
+    transition: var(--transition-fast);
+}
+
+.view-details:hover {
+    background: var(--color-white);
+    color: var(--color-dark-green);
+}
+
+.card-content {
+    padding: 25px 0;
+    text-align: center;
+}
+
+.card-title {
+    font-family: var(--font-display);
+    font-size: 22px;
+    color: var(--color-dark-green);
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.card-price {
+    font-family: var(--font-serif);
+    font-size: 15px;
+    color: var(--color-text-secondary);
+    margin-bottom: 20px;
+}
+
+.card-cta {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-dark-green);
+    border: 1px solid var(--color-dark-green);
+    padding: 12px 30px;
+    transition: var(--transition-normal);
+}
+
+.card-cta:hover {
+    background: var(--color-dark-green);
+    color: var(--color-white);
+}

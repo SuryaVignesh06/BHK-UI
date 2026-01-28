@@ -1,0 +1,231 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-md);
+    opacity: 0;
+    animation: fadeInModal 0.3s forwards;
+}
+
+@keyframes fadeInModal {
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    background: var(--color-bg);
+    width: 100%;
+    max-width: 1100px;
+    height: 90vh;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 32px;
+    line-height: 1;
+    background: rgba(255, 255, 255, 0.8);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    color: #000;
+}
+
+.modal-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Left Panel */
+.modal-details {
+    overflow-y: auto;
+    padding: var(--spacing-lg);
+}
+
+.modal-gallery img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.detail-text h2 {
+    font-size: 32px;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text-primary);
+}
+
+.description {
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-lg);
+}
+
+.amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+}
+
+.amenity-item {
+    color: var(--color-text-secondary);
+    font-size: 14px;
+}
+
+.amenity-icon {
+    color: var(--color-accent);
+    margin-right: 8px;
+}
+
+/* Right Panel - Booking Box */
+.modal-booking {
+    background: var(--color-surface);
+    padding: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-left: 1px solid var(--color-border);
+}
+
+.booking-step {
+    animation: slideInRight 0.4s ease-out;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.booking-step h3 {
+    font-size: 24px;
+    margin-bottom: var(--spacing-lg);
+}
+
+.price-tag {
+    font-size: 16px;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-text-secondary);
+}
+
+.price-tag span {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-accent);
+}
+
+.input-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    color: var(--color-text-secondary);
+}
+
+.input-group input,
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--spacing-md);
+    font-family: inherit;
+}
+
+.primary-btn {
+    width: 100%;
+    padding: 16px;
+    background: var(--color-accent);
+    color: #fff;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    margin-top: var(--spacing-md);
+    transition: var(--transition-normal);
+}
+
+.primary-btn:hover {
+    background: var(--color-accent-hover);
+}
+
+.step-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.back-btn {
+    flex: 1;
+    padding: 16px;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+}
+
+.step-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: var(--spacing-xl);
+}
+
+.step-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-border);
+    transition: var(--transition-normal);
+}
+
+.step-dot.active {
+    background: var(--color-accent);
+    transform: scale(1.2);
+}
+
+@media (max-width: 900px) {
+    .modal-grid {
+        grid-template-columns: 1fr;
+        overflow-y: auto;
+    }
+
+    .modal-content {
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    .modal-booking {
+        border-left: none;
+        border-top: 1px solid var(--color-border);
+    }
+}

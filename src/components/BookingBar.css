@@ -1,0 +1,58 @@
+.booking-bar-banner {
+    background-color: #FFFFFF;
+    display: flex;
+    padding: 10px;
+    border-radius: 12px;
+    /* Smoother rounding */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    gap: 2px;
+    max-width: 900px;
+    width: 95%;
+}
+
+/* ... middle content unchanged ... */
+
+.book-btn-rect {
+    background-color: var(--color-primary);
+    /* Dark Green */
+    color: #FFFFFF;
+    border: none;
+    padding: 20px 30px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s;
+    border-radius: 8px;
+    /* Matching rounded corners */
+    white-space: nowrap;
+    height: 100%;
+}
+
+.book-btn-rect:hover {
+    background-color: var(--color-secondary);
+    /* Gold */
+}
+
+@media (max-width: 768px) {
+    .booking-bar-banner {
+        flex-direction: column;
+        width: 90%;
+        gap: 10px;
+        padding: 20px;
+        align-items: stretch;
+    }
+
+    .booking-field {
+        border-right: none;
+        border-bottom: 1px solid #EEE;
+        padding: 10px 0;
+    }
+
+    .book-btn-rect {
+        width: 100%;
+        margin-top: 10px;
+    }
+}

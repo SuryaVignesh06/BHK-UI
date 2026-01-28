@@ -1,0 +1,343 @@
+/* Payment Page - Diodona Style */
+.payment-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-cream);
+    padding: 40px 20px;
+    font-family: var(--font-serif);
+}
+
+.modal {
+    width: 100%;
+    max-width: 500px;
+    background: var(--color-white);
+    border-radius: 4px;
+    box-shadow: 0 20px 60px rgba(56, 70, 64, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.modal-wide {
+    max-width: 550px;
+}
+
+/* Step 1: Room Preview & Dates */
+.booking-step-1 {
+    padding: 0;
+}
+
+.room-preview-container {
+    position: relative;
+    height: 280px;
+    overflow: hidden;
+}
+
+.room-preview-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.room-preview-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(56, 70, 64, 0.9), transparent);
+    padding: 40px 30px 30px;
+    color: var(--color-white);
+}
+
+.room-preview-info h3 {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 400;
+    margin: 0 0 8px;
+}
+
+.price-tag {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: var(--color-sage);
+    margin: 0;
+}
+
+.date-selection-form {
+    padding: 35px 30px;
+}
+
+.date-selection-form h4 {
+    font-family: var(--font-display);
+    font-size: 22px;
+    color: var(--color-dark-green);
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.input_container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input_label {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-medium-green);
+    font-weight: 500;
+}
+
+.input_wrapper {
+    position: relative;
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-sage);
+    pointer-events: none;
+}
+
+.input_field {
+    width: 100%;
+    height: 50px;
+    padding: 0 15px;
+    border: 1px solid rgba(56, 70, 64, 0.2);
+    border-radius: 4px;
+    background: var(--color-white);
+    font-family: var(--font-serif);
+    font-size: 16px;
+    color: var(--color-dark-green);
+    transition: var(--transition-fast);
+    box-sizing: border-box;
+}
+
+.input_field:focus {
+    outline: none;
+    border-color: var(--color-forest-green);
+}
+
+.input_field.with-icon {
+    padding-left: 45px;
+}
+
+.purchase--btn {
+    width: 100%;
+    height: 55px;
+    background: var(--color-dark-green);
+    border: none;
+    color: var(--color-white);
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: var(--transition-normal);
+    margin-top: 25px;
+}
+
+.purchase--btn:hover {
+    background: var(--color-forest-green);
+}
+
+/* Step 2: Payment Form */
+.booking-step-2 {
+    padding: 40px 30px;
+}
+
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-dark-green);
+    padding: 8px;
+    border-radius: 50%;
+    transition: var(--transition-fast);
+}
+
+.back-btn:hover {
+    background: rgba(56, 70, 64, 0.1);
+}
+
+.payment-header-hero {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-top: 10px;
+}
+
+.payment-header-hero h1 {
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 400;
+    color: var(--color-dark-green);
+    margin-bottom: 15px;
+}
+
+.secure-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-sans);
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: var(--color-forest-green);
+    margin-bottom: 15px;
+}
+
+.lock-icon {
+    color: var(--color-sage);
+}
+
+.total-amount-display {
+    font-family: var(--font-display);
+    font-size: 24px;
+    color: var(--color-dark-green);
+    font-weight: 400;
+}
+
+.night-count {
+    font-family: var(--font-serif);
+    font-size: 16px;
+    color: var(--color-medium-green);
+    font-weight: 400;
+}
+
+/* Pagination Dots */
+.pagination-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(56, 70, 64, 0.2);
+}
+
+.dot.active {
+    background-color: var(--color-sage);
+}
+
+/* Payment Tabs */
+.payment-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.pay-tab,
+.pay-tab.active,
+[class*="pay - tab"] {
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: 1px solid rgba(56, 70, 64, 0.3);
+    background: transparent;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--color-dark-green);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.pay-tab:hover,
+[class*="pay - tab"]:hover {
+    border-color: var(--color-dark-green);
+}
+
+.pay-tab.active,
+[class*="pay - tab"][class*="active"] {
+    background: var(--color-dark-green);
+    color: var(--color-white);
+    border-color: var(--color-dark-green);
+}
+
+/* Form Styles */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.select-field {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23384640%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 10px auto;
+}
+
+/* Pay & Confirm Button */
+.pay-confirm-btn {
+    width: 100%;
+    background: var(--color-sage);
+    color: var(--color-dark-green);
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 18px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: var(--transition-normal);
+}
+
+.pay-confirm-btn:hover {
+    background: var(--color-medium-green);
+    color: var(--color-white);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .modal {
+        max-width: 100%;
+        border-radius: 0;
+    }
+
+    .split {
+        grid-template-columns: 1fr;
+    }
+
+    .payment-page {
+        padding: 0;
+    }
+
+    .booking-step-2 {
+        padding: 30px 20px;
+    }
+
+    .date-selection-form {
+        padding: 25px 20px;
+    }
+
+    .payment-tabs {
+        flex-wrap: wrap;
+    }
+}
