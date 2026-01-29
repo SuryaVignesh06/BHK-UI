@@ -25,8 +25,13 @@ const Navbar = () => {
         return () => clearTimeout(timer);
     }, []);
 
-    const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
-    const closeMenu = () => setIsMobileMenuOpen(false);
+    const scrollToSection = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+            closeMenu();
+        }
+    };
 
     return (
         <>
@@ -57,7 +62,7 @@ const Navbar = () => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5 }}
                 >
-                    <a href="/">
+                    <a href="/" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
                         <motion.img
                             src={logoImg}
                             alt="VOHO"
@@ -73,11 +78,11 @@ const Navbar = () => {
                 <div className="navbar-container">
                     {/* Desktop Links */}
                     <div className="nav-links-right">
-                        <a href="#home" className="nav-link-item">Home</a>
-                        <a href="#about" className="nav-link-item">About</a>
-                        <a href="#gallery" className="nav-link-item">Gallery</a>
-                        <a href="#apartments" className="nav-link-item">Rooms</a>
-                        <a href="#contact" className="nav-link-item">Contact</a>
+                        <button onClick={() => scrollToSection('home')} className="nav-link-item">Home</button>
+                        <button onClick={() => scrollToSection('about')} className="nav-link-item">About</button>
+                        <button onClick={() => scrollToSection('gallery')} className="nav-link-item">Gallery</button>
+                        <button onClick={() => scrollToSection('apartments')} className="nav-link-item">Rooms</button>
+                        <button onClick={() => scrollToSection('contact')} className="nav-link-item">Contact</button>
                     </div>
 
                     {/* Mobile Menu Toggle */}
@@ -102,11 +107,11 @@ const Navbar = () => {
                         transition={{ duration: 0.3 }}
                     >
                         <div className="mobile-nav-links">
-                            <a href="#home" onClick={closeMenu}>Home</a>
-                            <a href="#about" onClick={closeMenu}>About</a>
-                            <a href="#gallery" onClick={closeMenu}>Gallery</a>
-                            <a href="#apartments" onClick={closeMenu}>Rooms</a>
-                            <a href="#contact" onClick={closeMenu}>Contact</a>
+                            <button onClick={() => scrollToSection('home')}>Home</button>
+                            <button onClick={() => scrollToSection('about')}>About</button>
+                            <button onClick={() => scrollToSection('gallery')}>Gallery</button>
+                            <button onClick={() => scrollToSection('apartments')}>Rooms</button>
+                            <button onClick={() => scrollToSection('contact')}>Contact</button>
                         </div>
                     </motion.div>
                 )}

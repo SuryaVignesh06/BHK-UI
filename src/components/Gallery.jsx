@@ -96,7 +96,7 @@ const Gallery = () => {
                             transition={{ duration: 0.5, delay: index % 4 * 0.1 }}
                             layout
                         >
-                            <img src={image.src} alt={image.alt} />
+                            <img src={image.src} alt={image.alt} loading="lazy" />
                             <div className="gallery-overlay">
                                 <span className="gallery-number">{String(index + 1).padStart(2, '0')}</span>
                             </div>
