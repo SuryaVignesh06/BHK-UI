@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './Payment.css';
 import { motion } from 'framer-motion';
-import { Calendar, ArrowLeft, Lock } from 'lucide-react'; // Import icons
+import { Calendar, ArrowLeft, Lock, Home } from 'lucide-react';
 
 const Payment = () => {
     const location = useLocation();
+    const navigate = useNavigate();
     const { selectedRoom } = location.state || {};
 
     // State for Booking Steps
@@ -49,6 +50,9 @@ const Payment = () => {
                 {/* Step 1: Room Preview & Dates */}
                 {step === 1 && (
                     <div className="booking-step-1">
+                        <button className="back-to-home-btn" onClick={() => navigate('/')}>
+                            <ArrowLeft size={18} /> Back to Rooms
+                        </button>
                         <div className="room-preview-container">
                             <img src={image} alt={roomName} className="room-preview-img" />
                             <div className="room-preview-info">

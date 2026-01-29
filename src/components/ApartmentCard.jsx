@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './ApartmentCard.css';
 
@@ -12,12 +11,12 @@ const cardVariants = {
     }
 };
 
-const ApartmentCard = ({ apartment, onClick }) => {
+const ApartmentCard = ({ apartment, onViewDetails, onBook }) => {
     return (
         <motion.div
             className="apartment-card"
             variants={cardVariants}
-            onClick={onClick}
+            onClick={onViewDetails}
         >
             <div className="card-image-wrapper">
                 <img src={apartment.image} alt={apartment.name} />
@@ -28,16 +27,17 @@ const ApartmentCard = ({ apartment, onClick }) => {
 
             <div className="card-content">
                 <h3 className="card-title">{apartment.name}</h3>
-                <p className="card-price">From ₹{apartment.price} / night</p>
+                <p className="card-price">From Rs.{apartment.price} / night</p>
 
-                <Link
-                    to="/payment"
-                    state={{ selectedRoom: apartment }}
+                <button
                     className="card-cta"
-                    onClick={(e) => e.stopPropagation()}
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        onBook();
+                    }}
                 >
                     Book Now
-                </Link>
+                </button>
             </div>
         </motion.div>
     );

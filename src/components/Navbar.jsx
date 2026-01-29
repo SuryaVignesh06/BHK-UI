@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [showSplash, setShowSplash] = useState(true);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -21,6 +23,9 @@ const Navbar = () => {
         }, 2000);
         return () => clearTimeout(timer);
     }, []);
+
+    const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+    const closeMenu = () => setIsMobileMenuOpen(false);
 
     return (
         <>
@@ -43,7 +48,7 @@ const Navbar = () => {
                 )}
             </AnimatePresence>
 
-            {/* Floating Logo - No background at top, circular on scroll */}
+            {/* Floating Logo */}
             {!showSplash && (
                 <motion.div
                     className={`floating-logo ${scrolled ? 'scrolled' : ''}`}
@@ -62,9 +67,10 @@ const Navbar = () => {
                 </motion.div>
             )}
 
-            {/* Navbar with only links on right */}
-            <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+            {/* Navbar */}
+            <nav className={`navbar ${scrolled || isMobileMenuOpen ? 'scrolled' : ''}`}>
                 <div className="navbar-container">
+                    {/* Desktop Links */}
                     <div className="nav-links-right">
                         <a href="#home" className="nav-link-item">Home</a>
                         <a href="#about" className="nav-link-item">About</a>
@@ -72,8 +78,38 @@ const Navbar = () => {
                         <a href="#apartments" className="nav-link-item">Rooms</a>
                         <a href="#contact" className="nav-link-item">Contact</a>
                     </div>
+
+                    {/* Mobile Menu Toggle */}
+                    <div className="mobile-menu-toggle" onClick={toggleMenu}>
+                        {isMobileMenuOpen ? (
+                            <X size={28} color={scrolled || isMobileMenuOpen ? "#ffffff" : "#ffffff"} />
+                        ) : (
+                            <Menu size={28} color={scrolled ? "#ffffff" : "#ffffff"} />
+                        )}
+                    </div>
                 </div>
             </nav>
+
+            {/* Mobile Menu Overlay */}
+            <AnimatePresence>
+                {isMobileMenuOpen && (
+                    <motion.div
+                        className="mobile-menu-overlay"
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.3 }}
+                    >
+                        <div className="mobile-nav-links">
+                            <a href="#home" onClick={closeMenu}>Home</a>
+                            <a href="#about" onClick={closeMenu}>About</a>
+                            <a href="#gallery" onClick={closeMenu}>Gallery</a>
+                            <a href="#apartments" onClick={closeMenu}>Rooms</a>
+                            <a href="#contact" onClick={closeMenu}>Contact</a>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </>
     );
 };

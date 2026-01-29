@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './Gallery.css';
 
@@ -36,6 +36,21 @@ const itemVariants = {
 };
 
 const Gallery = () => {
+    const [isMobile, setIsMobile] = useState(false);
+    const [showAll, setShowAll] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    const displayedImages = isMobile && !showAll ? galleryImages.slice(0, 6) : galleryImages;
+
     return (
         <section id="gallery" className="gallery-section">
             <div className="gallery-container">
@@ -57,11 +72,15 @@ const Gallery = () => {
                     whileInView="visible"
                     viewport={{ once: true, margin: "-50px" }}
                 >
-                    {galleryImages.map((image, index) => (
+                    {displayedImages.map((image, index) => (
                         <motion.div
                             key={image.id}
                             className={`gallery-item gallery-item-${index + 1}`}
-                            variants={itemVariants}
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: index % 4 * 0.1 }}
+                            layout
                         >
                             <img src={image.src} alt={image.alt} />
                             <div className="gallery-overlay">
@@ -70,6 +89,22 @@ const Gallery = () => {
                         </motion.div>
                     ))}
                 </motion.div>
+
+                {isMobile && (
+                    <motion.div
+                        className="gallery-actions"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.2 }}
+                    >
+                        <button
+                            className="view-more-btn"
+                            onClick={() => setShowAll(!showAll)}
+                        >
+                            {showAll ? 'View Less' : 'View More'}
+                        </button>
+                    </motion.div>
+                )}
             </div>
         </section>
     );
