@@ -42,6 +42,11 @@ const Contact = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.2 }}
+                    onSubmit={(e) => {
+                        e.preventDefault();
+                        alert("Thank you for your message! We'll get back to you soon.");
+                        e.target.reset();
+                    }}
                 >
                     <div className="form-group">
                         <input type="text" placeholder="Your Name" required />

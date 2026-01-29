@@ -19,7 +19,7 @@ const Footer = () => {
                     <div className="link-group">
                         <h4>Location</h4>
                         <p>Bhimavaram, Andhra Pradesh</p>
-                        <a href="#" className="map-link">View on Map</a>
+                        <a href="https://www.google.com/maps/search/Bhimavaram" target="_blank" rel="noopener noreferrer" className="map-link">View on Map</a>
                     </div>
                 </div>
             </div>

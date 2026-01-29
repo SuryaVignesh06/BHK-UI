@@ -4,6 +4,14 @@ import './About.css';
 import aboutImage from '../assets/bhk4.jpeg';
 
 const About = () => {
+    const scrollToApartments = (e) => {
+        e.preventDefault();
+        const element = document.getElementById('apartments');
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <section id="about" className="about-section">
             <div className="about-container">
@@ -42,9 +50,9 @@ const About = () => {
                         Every corner is crafted with your peace in mind—from our soundproof
                         interiors to our attentive service.
                     </p>
-                    <a href="#apartments" className="about-cta">
+                    <button onClick={scrollToApartments} className="about-cta">
                         Discover Our Apartments
-                    </a>
+                    </button>
                 </motion.div>
             </div>
         </section>
