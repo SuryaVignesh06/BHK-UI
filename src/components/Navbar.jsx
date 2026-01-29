@@ -25,6 +25,9 @@ const Navbar = () => {
         return () => clearTimeout(timer);
     }, []);
 
+    const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+    const closeMenu = () => setIsMobileMenuOpen(false);
+
     const scrollToSection = (id) => {
         const element = document.getElementById(id);
         if (element) {
