@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import logoImg from '../assets/logo.png';
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -38,7 +39,7 @@ const Navbar = () => {
                         transition={{ duration: 0.5 }}
                     >
                         <motion.img
-                            src="/src/assets/logo.png"
+                            src={logoImg}
                             alt="VOHO"
                             className="splash-logo"
                             layoutId="logo-img"
@@ -58,7 +59,7 @@ const Navbar = () => {
                 >
                     <a href="/">
                         <motion.img
-                            src="/src/assets/logo.png"
+                            src={logoImg}
                             alt="VOHO"
                             className="floating-logo-img"
                             layoutId="logo-img"

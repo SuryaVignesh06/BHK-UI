@@ -6,15 +6,19 @@ import { ChevronDown } from 'lucide-react';
 import VideoModal from './VideoModal';
 import videoSource from '../assets/bhkv.mp4';
 
+import bhk1 from '../assets/bhk1.jpeg';
+import bhk2 from '../assets/bhk2.jpeg';
+import bhk3 from '../assets/bhk3.jpeg';
+
 const heroSlides = [
     {
-        image: "/src/assets/bhk1.jpeg",
+        image: bhk1,
     },
     {
-        image: "/src/assets/bhk2.jpeg",
+        image: bhk2,
     },
     {
-        image: "/src/assets/bhk3.jpeg",
+        image: bhk3,
     }
 ];
 

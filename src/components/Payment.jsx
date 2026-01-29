@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import './Payment.css';
 import { motion } from 'framer-motion';
 import { Calendar, ArrowLeft, Lock, Home } from 'lucide-react';
+import fallbackImage from '../assets/bhk1.jpeg';
 
 const Payment = () => {
     const location = useLocation();
@@ -22,7 +23,7 @@ const Payment = () => {
     // Default values
     const roomName = selectedRoom ? selectedRoom.name : "Premium Suite";
     const pricePerNight = selectedRoom ? parseInt(selectedRoom.price) : 4500;
-    const image = selectedRoom ? selectedRoom.image : "/src/assets/room1.jpg"; // Fallback image
+    const image = selectedRoom ? selectedRoom.image : fallbackImage;
 
     useEffect(() => {
         if (checkIn && checkOut) {

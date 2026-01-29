@@ -4,14 +4,27 @@ import ApartmentCard from './ApartmentCard';
 import ApartmentModal from './ApartmentModal';
 import './ApartmentsSection.css';
 
+import bhk1 from '../assets/bhk1.jpeg';
+import bhk2 from '../assets/bhk2.jpeg';
+import bhk3 from '../assets/bhk3.jpeg';
+import bhk4 from '../assets/bhk4.jpeg';
+import bhk5 from '../assets/bhk5.jpeg';
+import bhk6 from '../assets/bhk6.jpeg';
+import bhk7 from '../assets/bhk7.jpeg';
+import bhk8 from '../assets/bhk8.jpeg';
+import bhk9 from '../assets/bhk9.jpeg';
+import bhk10 from '../assets/bhk10.jpeg';
+import bhk11 from '../assets/bhk11.jpeg';
+import bhk12 from '../assets/bhk12.jpeg';
+
 const apartments = [
     {
         id: 1,
         name: 'The Royal Suite',
         price: '3,500',
         description: 'Spacious 2BHK with premium wood finishings and city view. Features a modern kitchen, comfortable living area, and elegant bedroom spaces designed for relaxation.',
-        image: '/src/assets/bhk5.jpeg',
-        images: ['/src/assets/bhk5.jpeg', '/src/assets/bhk1.jpeg', '/src/assets/bhk2.jpeg'],
+        image: bhk5,
+        images: [bhk5, bhk1, bhk2],
         amenities: ['WiFi', 'AC', 'Kitchen', 'Balcony']
     },
     {
@@ -19,8 +32,8 @@ const apartments = [
         name: 'Modern Comfort Flat',
         price: '3,200',
         description: 'Contemporary design with smart lighting and open kitchen. Perfect for couples or small families seeking modern amenities in a cozy setting.',
-        image: '/src/assets/bhk6.jpeg',
-        images: ['/src/assets/bhk6.jpeg', '/src/assets/bhk3.jpeg', '/src/assets/bhk4.jpeg'],
+        image: bhk6,
+        images: [bhk6, bhk3, bhk4],
         amenities: ['WiFi', 'AC', 'Work Desk', 'Parking']
     },
     {
@@ -28,8 +41,8 @@ const apartments = [
         name: 'Cozy Family Haven',
         price: '3,000',
         description: 'Perfect for families, warm lighting and large living area. Includes spacious bedrooms, a fully equipped kitchen, and a comfortable dining space.',
-        image: '/src/assets/bhk7.jpeg',
-        images: ['/src/assets/bhk7.jpeg', '/src/assets/bhk9.jpeg', '/src/assets/bhk10.jpeg'],
+        image: bhk7,
+        images: [bhk7, bhk9, bhk10],
         amenities: ['WiFi', 'AC', 'TV', 'Laundry']
     },
     {
@@ -37,8 +50,8 @@ const apartments = [
         name: 'Executive Stay',
         price: '4,000',
         description: 'Luxury finishing for business travelers with dedicated workspace. Features premium furnishings, high-speed internet, and a peaceful environment for productivity.',
-        image: '/src/assets/bhk8.jpeg',
-        images: ['/src/assets/bhk8.jpeg', '/src/assets/bhk11.jpeg', '/src/assets/bhk12.jpeg'],
+        image: bhk8,
+        images: [bhk8, bhk11, bhk12],
         amenities: ['WiFi', 'AC', 'Meeting Area', 'View']
     }
 ];
