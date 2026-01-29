@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './About.css';
+import aboutImage from '../assets/bhk4.jpeg';
 
 const About = () => {
     return (
@@ -14,7 +15,7 @@ const About = () => {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                 >
                     <img
-                        src="/src/assets/bhk4.jpeg"
+                        src={aboutImage}
                         alt="Luxury Interior"
                         className="about-img"
                     />
